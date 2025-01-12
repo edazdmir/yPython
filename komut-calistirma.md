@@ -1,36 +1,81 @@
----
-description: Python üzerinde işletim sistemi komutlarını çalıştırma
----
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
 
-# 🎌 Komut Çalıştırma
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
 
-## 🧆 Komutların çalıştırılması
+header nav {
+    margin-top: 10px;
+}
 
-Komutlar ve programların yönetimi `subprocess` paketi ile gerçekleşmektedir.
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
 
-```python
-import subprocess, os
+header nav a:hover {
+    text-decoration: underline;
+}
 
-os.chdir(os.path.dirname(__file__)) # İstenilen dizine girme
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 
-# Orjinal komut: git descript --always
-print(subprocess.check_output(["git", "describe", "--always"]).strip().decode()) 
-```
+/* Content */
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 
-## 🎪 Programların Çalıştırılması ve Çıktılarının Okunması
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
 
-```python
-#!/usr/bin/env python3
-from subprocess import Popen, PIPE
+/* Form */
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
 
-with Popen(r'C:\path\to\program.exe "arg 1" "arg 2"',
-           stdout=PIPE, stderr=PIPE) as p:
-    output, errors = p.communicate()
-lines = output.decode('utf-8').splitlines()
-```
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
 
-## 🔗 Faydalı Bağlantılar
+form button {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
 
-* [Get the current git hash in a Python script](https://stackoverflow.com/a/57683700/9770490)
-* [Python popen\(\) - communicate\( str.encode\(encoding=“utf-8”, errors=“ignore”\) \) crashes](https://stackoverflow.com/a/33291200/9770490)
-
+form button:hover {
+    background-color: #555;
+}
